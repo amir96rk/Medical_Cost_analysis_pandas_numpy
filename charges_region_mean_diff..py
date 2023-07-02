@@ -26,3 +26,9 @@ def charges_mean_diff():
         
         output = ' {0:.2f} percent of inpatient are charaged more than there region mean and {1:.2f} percent of inpatient are charaged less than there region mean'''.format(charged_more_percent,charged_less_percent)
         return output
+
+# returns : '31.99 percent of inpatient are charaged more than there region's mean 
+# and 68.01 percent of inpatient are charaged less than there region's mean'
+​
+
+
