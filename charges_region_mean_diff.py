@@ -1,10 +1,11 @@
+# In this code, I got the difference with the "charges paid by each person" and "mean charges of each region" for each row.
+# Then, I found out what percent of inpatient had paid more than avreage of their region and what percent paid less than 
+# avreage of their region.
+
+import pandas as pd
+import numpy as np
+
 def charges_mean_diff():
-        # In this code, I got the difference with the "charges paid by each person" and "mean charges of each region" for each row.
-        # Then, I found out what percent of inpatient had paid more than avreage of their region and what percent paid less than 
-        # avreage of their region.
-        
-        import pandas as pd
-        import numpy as np
         df = pd.read_csv('insurance.csv')
         
         # I transformed df to a dataframe which has two columns of region and charges
@@ -24,9 +25,10 @@ def charges_mean_diff():
         charged_more_percent = (len(df[df['mean_diff'] > 0]) / len(df)) * 100
         charged_less_percent = (len(df[df['mean_diff'] < 0]) / len(df)) * 100
         
-        output = ' {0:.2f} percent of inpatient are charaged more than there region mean and {1:.2f} percent of inpatient are charaged less than there region mean'''.format(charged_more_percent,charged_less_percent)
+        output = ''' {0:.2f} percent of inpatient are charaged more than there region mean and {1:.2f} percent 
+        of inpatient are charaged less than there region mean'''.format(charged_more_percent,charged_less_percent)
+        
         return output
-
 # returns : '31.99 percent of inpatient are charaged more than there region's mean 
 # and 68.01 percent of inpatient are charaged less than there region's mean'
 ​
