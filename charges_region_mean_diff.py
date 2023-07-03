@@ -1,5 +1,5 @@
-# In this code, I got the difference with the "charges paid by each person" and "mean charges of each region" for each row.
-# Then, I found out what percent of inpatient had paid more than avreage of their region and what percent paid less than 
+# In this code, I got the subtraction with the "charges" (Individual medical costs billed by health insurance) and "mean charges of each region" for each row.
+# Then, I found out what percent of inpatient costs is more than avreage of their region and what percent is less than 
 # avreage of their region.
 
 import pandas as pd
@@ -25,12 +25,12 @@ def charges_mean_diff():
         charged_more_percent = (len(df[df['mean_diff'] > 0]) / len(df)) * 100
         charged_less_percent = (len(df[df['mean_diff'] < 0]) / len(df)) * 100
         
-        output = ''' {0:.2f} percent of inpatient are charaged more than there region mean and {1:.2f} percent 
-        of inpatient are charaged less than there region mean'''.format(charged_more_percent,charged_less_percent)
+        output = ''' {0:.2f} percent of inpatient medical costs are more than there region's mean and {1:.2f} percent 
+        of inpatient medical costs are less than there region's mean'''.format(charged_more_percent,charged_less_percent)
         
         return output
-# returns : '31.99 percent of inpatient are charaged more than there region's mean 
-# and 68.01 percent of inpatient are charaged less than there region's mean'
+# returns : '31.99 percent of inpatient medical costs are more than there region's mean 
+# and 68.01 percent of inpatient medical costs are less than there region's mean'
 ​
 
 
